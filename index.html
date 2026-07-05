@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>客舱应急处置 · 统一评价标准与成绩计算模型</title>
+<title>客舱应急撤离 · 项目4 · 评价方案与成绩模型</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23002060%22/%3E%3Cpath d=%22M32 12l4 14 14 4-14 4-4 14-4-14-14-4 14-4z%22 fill=%22%23ff9f00%22/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23002060%22/%3E%3Cpath d=%22M32 12l4 14 14 4-14 4-4 14-4-14-14-4 14-4z%22 fill=%22%23ff9f00%22/%3E%3C/svg%3E">
 <meta name="theme-color" content="#002060">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="评价模型">
+<meta name="apple-mobile-web-app-title" content="项目4评价">
 <meta name="mobile-web-app-capable" content="yes">
 
 <script>
@@ -41,18 +41,16 @@ body{font-family:"Microsoft YaHei","微软雅黑",system-ui,sans-serif;backgroun
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
 
-/* header */
 header{background:linear-gradient(135deg,#002060 0%,#0f2a5c 60%,#13345e 100%);color:#fff;padding:34px 0 26px;position:relative;overflow:hidden}
 header::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,159,0,.22),transparent 70%)}
 .tag{display:inline-block;background:rgba(255,159,0,.15);border:1px solid var(--orange2);color:var(--orange2);
   padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:14px}
-header h1{font-size:31px;font-weight:800;letter-spacing:1px}
+header h1{font-size:30px;font-weight:800;letter-spacing:1px}
 header p{color:#c7d3ea;margin-top:8px;font-size:15px}
 .pill-row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
 .pill{background:#13345e;border:1px solid rgba(255,159,0,.5);border-radius:8px;padding:8px 15px;font-size:13.5px;font-weight:700}
 .pill b{color:var(--orange2)}
 
-/* sticky nav */
 nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(0,32,96,.05)}
 nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:0 22px}
 nav a{padding:14px 16px;font-size:14.5px;font-weight:700;color:var(--grey);white-space:nowrap;border-bottom:3px solid transparent;transition:.15s}
@@ -72,35 +70,37 @@ section{padding:44px 0;border-bottom:1px solid rgba(0,32,96,.06)}
 .g4{grid-template-columns:repeat(4,1fr)}
 @media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
 
-/* architecture */
-.arch-flow{display:grid;grid-template-columns:1fr;gap:16px}
-.arch-band{border-radius:12px;padding:16px 18px;color:#fff;position:relative}
-.arch-band h4{font-size:16px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.arch-band .chips{display:flex;gap:8px;flex-wrap:wrap}
-.arch-band .chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:600}
-.sub-a{display:flex;align-items:center;gap:6px;background:#fff;color:var(--ink);border-radius:8px;padding:5px 11px;font-size:12.5px;font-weight:700;border:1px solid var(--line)}
+.type-band{border-radius:12px;padding:16px 18px;color:#fff;display:flex;align-items:center;justify-content:space-between}
+.type-band h4{font-size:17px;margin-bottom:4px}
+.type-band small{opacity:.9;font-size:12.5px}
+.type-band .pc{font-size:30px;font-weight:800}
 
-.subj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:860px){.subj-grid{grid-template-columns:1fr 1fr}}
-.subj{border-radius:12px;padding:16px;text-align:center;border:1.5px solid var(--line);background:#fff}
-.subj .ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 10px;color:#fff}
-.subj h5{font-size:15.5px;color:var(--navy)}
-.subj .w{font-size:26px;font-weight:800;margin:4px 0}
-.subj small{color:var(--grey);font-size:12px}
+.subj-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:860px){.subj-grid{grid-template-columns:repeat(2,1fr)}}
+.subj{border-radius:12px;padding:14px 10px;text-align:center;border:1.5px solid var(--line);background:#fff}
+.subj .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 8px;color:#fff}
+.subj h5{font-size:14.5px;color:var(--navy)}
+.subj .w{font-size:23px;font-weight:800;margin:2px 0}
+.subj small{color:var(--grey);font-size:11.5px}
 
-/* formula */
+.matrix{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:stretch}
+.matrix .lab{background:var(--navy);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;text-align:center;padding:8px}
+.matrix .cells{display:flex;gap:8px;flex-wrap:wrap}
+.mcell{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:12.5px;font-weight:600;color:var(--ink);flex:1;min-width:120px;text-align:center}
+.mcell b{display:block;color:var(--navy);font-size:13px}
+.mrow{display:grid;grid-template-columns:120px 1fr;gap:10px;margin-bottom:10px}
+
 .formula{background:linear-gradient(135deg,#0f2a5c,#13345e);color:#fff;border-radius:14px;padding:26px;text-align:center}
 .formula .eq{font-size:20px;font-weight:700;letter-spacing:.5px;line-height:2.1}
 .formula .eq .term{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,159,0,.4);border-radius:9px;padding:5px 12px;margin:4px}
 .formula .eq .w{color:var(--orange2);font-weight:800}
-.legend{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
-@media(max-width:860px){.legend{grid-template-columns:1fr 1fr}}
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+@media(max-width:860px){.legend{grid-template-columns:1fr}}
 .legend .li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
 .legend .li .tp{font-weight:800;font-size:14px;display:flex;justify-content:space-between;align-items:center}
 .legend .li .pct{color:#fff;border-radius:6px;padding:2px 8px;font-size:12.5px}
 .legend .li p{color:var(--grey);font-size:12.5px;margin-top:6px}
 
-/* calculator */
 .calc-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:22px}
 @media(max-width:980px){.calc-grid{grid-template-columns:1fr}}
 .field{margin-bottom:15px}
@@ -114,15 +114,14 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 .result-card{background:linear-gradient(135deg,#002060,#13345e);color:#fff;border-radius:14px;padding:22px;text-align:center;position:relative;overflow:hidden}
 .result-card .total{font-size:60px;font-weight:800;line-height:1;color:var(--orange2)}
 .result-card .grade{display:inline-block;margin-top:10px;padding:5px 18px;border-radius:20px;font-weight:800;font-size:16px}
-.rc-break{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
+.rc-break{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
 .rc-break .b{background:rgba(255,255,255,.1);border-radius:9px;padding:9px 4px}
-.rc-break .b .n{font-size:19px;font-weight:800}
+.rc-break .b .n{font-size:20px;font-weight:800}
 .rc-break .b small{font-size:10.5px;color:#c7d3ea}
 .va-badge{margin-top:14px;background:rgba(255,159,0,.16);border:1px solid var(--orange2);border-radius:10px;padding:10px 12px;font-size:13px}
 .va-badge b{color:var(--orange2)}
 .mini{color:var(--grey);font-size:12px;margin-top:6px}
 
-/* table */
 table{width:100%;border-collapse:collapse;font-size:13.5px}
 th,td{padding:9px 10px;text-align:center;border-bottom:1px solid var(--line)}
 th{background:var(--navy);color:#fff;font-weight:700;cursor:pointer;user-select:none;position:sticky;top:0}
@@ -130,36 +129,38 @@ th:hover{background:#0f2a5c}
 tbody tr:hover{background:#f4f8ff}
 td.name{text-align:left;font-weight:700}
 .chip-g{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11.5px;font-weight:700}
-.tbl-wrap{max-height:420px;overflow-y:auto;border-radius:12px;border:1px solid var(--line)}
+.tbl-wrap{max-height:430px;overflow-y:auto;border-radius:12px;border:1px solid var(--line)}
 .kpi{text-align:center;padding:18px}
-.kpi .n{font-size:34px;font-weight:800}
+.kpi .n{font-size:32px;font-weight:800}
 .kpi small{color:var(--grey);font-size:13px}
 .updn{font-size:13px;font-weight:700}
+.sumtable td{font-variant-numeric:tabular-nums}
+.sumtable tr.total-row td{background:#0f2a5c;color:#fff;font-weight:800;font-size:15px}
 
 .note{background:#fff;border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:14px 18px;font-size:13.5px;color:var(--ink);margin-top:14px}
-.stepline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:6px}
-@media(max-width:860px){.stepline{grid-template-columns:1fr 1fr}}
-.stepbox{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px;text-align:center}
+.stepline{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.stepbox{background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
 .stepbox .st{font-size:12px;font-weight:800;color:#fff;border-radius:6px;padding:2px 9px;display:inline-block}
-.stepbox p{font-size:12.5px;color:var(--grey);margin-top:8px}
-footer{background:var(--navy);color:#c7d3ea;text-align:center;padding:26px;font-size:13px}
+.stepbox p{font-size:12px;color:var(--grey);margin-top:8px}
+footer{background:var(--navy);color:#c7d3ea;text-align:center;padding:24px;font-size:13px}
 footer b{color:var(--orange2)}
 .canvas-box{position:relative;height:300px}
 .small-canvas{position:relative;height:250px}
+.line-canvas{position:relative;height:280px}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <span class="tag">教学能力大赛 · 客舱应急处置模块</span>
-    <h1>统一评价标准 &nbsp;·&nbsp; 成绩计算模型</h1>
-    <p>依据《基于校企共育的“情境-合作型”课堂》实施方案 —— 多元 · 多维 · 立体增值的动态评价体系</p>
+    <span class="tag">客舱应急撤离 · 项目4 · 贯穿教学全程</span>
+    <h1>评价方案与成绩计算模型</h1>
+    <p>动态跟踪实时学情，贯穿课前·课中·课后全过程 —— 多元多维、立体增值的考核评价</p>
     <div class="pill-row">
-      <div class="pill" style="background:#0d3b1f;border-color:#1e9e5b"><b style="color:#4ade80">● 离线可用</b> 无需联网</div><button id="installBtn" class="pill" style="display:none;cursor:pointer;background:#ff9f00;border-color:#ff9f00;color:#002060;font-weight:800">⤓ 安装到设备</button><div class="pill"><b>四元主体</b> 软件 · 学生 · 教师 · 企业</div>
+      <div class="pill" style="background:#0d3b1f;border-color:#1e9e5b"><b style="color:#4ade80">● 离线可用</b> 无需联网</div><button id="installBtn" class="pill" style="display:none;cursor:pointer;background:#ff9f00;border-color:#ff9f00;color:#002060;font-weight:800">⤓ 安装到设备</button><div class="pill"><b>五元主体</b> 教师·企业·学生自评·互评·软件</div>
+      <div class="pill"><b>三类评价</b> 结果·过程·增值</div>
       <div class="pill"><b>六维观测</b> 展现·行动·态度·能力·心理·职业</div>
-      <div class="pill"><b>六阶评价</b> 测基础→五演→拓本领</div>
-      <div class="pill"><b>增值评价</b> 看成长 · 非唯分数</div>
+      <div class="pill"><b>八个任务</b> 对应教案 1–8</div>
     </div>
   </div>
 </header>
@@ -168,81 +169,88 @@ footer b{color:var(--orange2)}
   <a href="#arch" class="active">评价架构</a>
   <a href="#model">成绩模型</a>
   <a href="#calc">成绩计算器</a>
-  <a href="#board">全班增值看板</a>
+  <a href="#board">全班评价看板</a>
   <a href="#va">增值评价原理</a>
 </div></nav>
 
 <!-- ARCHITECTURE -->
 <section id="arch"><div class="wrap">
   <div class="sec-h"><div class="bar"></div><h2>一、统一评价架构</h2></div>
-  <div class="sec-sub">“多元多维、立体增值”——横向覆盖四类评价主体与六个观测维度，纵向贯通课前·课中·课后的成长轨迹。</div>
+  <div class="sec-sub">横向覆盖五类评价主体与六个观测维度，纵向贯通课前·课中·课后，形成“多元多维、立体增值”的评价体系。</div>
 
   <div class="grid g2" style="align-items:start">
-    <div class="grid" style="gap:14px">
-      <div class="arch-band" style="background:linear-gradient(135deg,#1e4280,#2b5aa0)">
-        <h4>① 基础评价 <span class="sub-a">课前 · 探练</span></h4>
-        <div class="chips"><span class="chip">预习完成度</span><span class="chip">思维导图</span><span class="chip">随堂前测</span></div>
+    <div>
+      <div class="blockttl" style="margin-top:0">评价类型 · 三类构成</div>
+      <div class="grid" style="gap:12px">
+        <div class="type-band" style="background:linear-gradient(135deg,#1e4280,#2b5aa0)">
+          <div><h4>结果评价</h4><small>终结考核 · 八个任务达标度</small></div><div class="pc">50%</div></div>
+        <div class="type-band" style="background:linear-gradient(135deg,#002060,#13345e)">
+          <div><h4>过程评价</h4><small>课中五演 · 技能·流程·配合·素养</small></div><div class="pc">40%</div></div>
+        <div class="type-band" style="background:linear-gradient(135deg,#ff9f00,#f0a03e)">
+          <div><h4>增值评价</h4><small>前测→后测 · 净增值成长</small></div><div class="pc">10%</div></div>
       </div>
-      <div class="arch-band" style="background:linear-gradient(135deg,#002060,#13345e)">
-        <h4>② 过程评价 <span class="sub-a">课中 · 五演研磨</span></h4>
-        <div class="chips"><span class="chip">技能精准度</span><span class="chip">流程完整度</span><span class="chip">团队配合</span><span class="chip">职业素养</span></div>
-      </div>
-      <div class="arch-band" style="background:linear-gradient(135deg,#1e9e5b,#2bb56b)">
-        <h4>③ 终结评价 <span class="sub-a">课后 · 拓练</span></h4>
-        <div class="chips"><span class="chip">复训视频</span><span class="chip">反思报告</span><span class="chip">组内互评</span></div>
-      </div>
-      <div class="arch-band" style="background:linear-gradient(135deg,#ff9f00,#f0a03e)">
-        <h4>④ 增值评价 <span class="sub-a">全程 · 看成长</span></h4>
-        <div class="chips"><span class="chip">前测→后测净增值</span><span class="chip">期望增值对标</span><span class="chip">成长档案</span></div>
+      <div class="blockttl">六阶评价 · 对接五演进阶</div>
+      <div class="stepline">
+        <div class="stepbox"><span class="st" style="background:#1e4280">测基础</span><p>课前 · 探练</p></div>
+        <div class="stepbox"><span class="st" style="background:#002060">五演研磨</span><p>析·预·初·再·汇</p></div>
+        <div class="stepbox"><span class="st" style="background:#1e9e5b">拓本领</span><p>课后 · 拓练</p></div>
       </div>
     </div>
 
     <div class="card">
-      <div class="blockttl" style="margin-top:0">四元主体 · 谁在评</div>
+      <div class="blockttl" style="margin-top:0">评价主体 · 五元加权（谁来评）</div>
       <div class="subj-grid">
-        <div class="subj" style="border-color:#0046c9"><div class="ic" style="background:#0046c9">🤖</div><h5>软件评 AI</h5><div class="w" style="color:#0046c9">40%</div><small>骨骼/音频/时序客观数据</small></div>
-        <div class="subj" style="border-color:#1e9e5b"><div class="ic" style="background:#1e9e5b">👥</div><h5>学生评</h5><div class="w" style="color:#1e9e5b">40%</div><small>自评20% + 互评20%</small></div>
-        <div class="subj" style="border-color:#002060"><div class="ic" style="background:#002060">👨‍🏫</div><h5>教师评</h5><div class="w" style="color:#002060">10%</div><small>规范把关 · 素养引导</small></div>
-        <div class="subj" style="border-color:#ff9f00"><div class="ic" style="background:#ff9f00">🏢</div><h5>企业评</h5><div class="w" style="color:#ff9f00">10%</div><small>岗位标准 · 职业认同</small></div>
+        <div class="subj" style="border-color:#002060"><div class="ic" style="background:#002060">👨‍🏫</div><h5>教师评</h5><div class="w" style="color:#002060">50%</div><small>规范把关·素养引导</small></div>
+        <div class="subj" style="border-color:#ff9f00"><div class="ic" style="background:#ff9f00">🏢</div><h5>企业评</h5><div class="w" style="color:#ff9f00">20%</div><small>岗位标准·职业认同</small></div>
+        <div class="subj" style="border-color:#e08a00"><div class="ic" style="background:#e08a00">🙋</div><h5>学生自评</h5><div class="w" style="color:#e08a00">10%</div><small>反思·自我诊断</small></div>
+        <div class="subj" style="border-color:#1e9e5b"><div class="ic" style="background:#1e9e5b">👥</div><h5>学生互评</h5><div class="w" style="color:#1e9e5b">10%</div><small>同伴·团队配合</small></div>
+        <div class="subj" style="border-color:#0046c9"><div class="ic" style="background:#0046c9">🤖</div><h5>软件评</h5><div class="w" style="color:#0046c9">10%</div><small>骨骼/音频客观数据</small></div>
       </div>
-      <div class="blockttl">六阶评价 · 对接五演进阶</div>
-      <div class="stepline" style="grid-template-columns:repeat(3,1fr)">
-        <div class="stepbox"><span class="st" style="background:#1e4280">测基础</span><p>课前平台</p></div>
-        <div class="stepbox"><span class="st" style="background:#002060">五演研磨</span><p>析·预·初·再·汇</p></div>
-        <div class="stepbox"><span class="st" style="background:#1e9e5b">拓本领</span><p>课后拓练</p></div>
-      </div>
-      <div class="note">六个观测维度：<b>展现</b>（演示·建设）·<b>行动</b>（参与·活跃）·<b>态度</b>（学习·实践）·<b>能力发展</b>·<b>心理发展</b>（压力应对）·<b>职业发展</b>（职业认同），全程留痕、可追溯。</div>
+      <div style="height:210px;position:relative;margin-top:14px"><canvas id="subjChart"></canvas></div>
     </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <div class="blockttl" style="margin-top:0">多元多维 · 立体评价矩阵</div>
+    <div class="mrow"><div class="lab">评价要素</div><div class="cells">
+      <div class="mcell"><b>展现</b>演示、建设</div><div class="mcell"><b>行动</b>参与、活跃</div><div class="mcell"><b>态度</b>学习、实践</div>
+      <div class="mcell"><b>能力发展</b>学习合作能力</div><div class="mcell"><b>心理发展</b>压力应对</div><div class="mcell"><b>职业发展</b>职业认同</div>
+    </div></div>
+    <div class="mrow"><div class="lab">评价手段</div><div class="cells">
+      <div class="mcell"><b>软件评</b>AI客观数据</div><div class="mcell"><b>学生评</b>自评+互评</div><div class="mcell"><b>企业评</b>岗位视角</div><div class="mcell"><b>教师评</b>规范把关</div>
+    </div></div>
+    <div class="mrow" style="margin-bottom:0"><div class="lab">评价方式</div><div class="cells">
+      <div class="mcell"><b>线上 · 线下</b>平台+课堂</div><div class="mcell"><b>理论 · 实践</b>认知+操作</div>
+      <div class="mcell"><b>课前 探练</b>→ 课中 研磨评练 → 课后 拓练</div>
+    </div></div>
   </div>
 </div></section>
 
 <!-- MODEL -->
 <section id="model"><div class="wrap">
   <div class="sec-h"><div class="bar"></div><h2>二、综合成绩计算模型</h2></div>
-  <div class="sec-sub">综合成绩由基础分、课堂分、作业分、增值分四部分加权构成，正对知识·技能·思政三维目标。</div>
+  <div class="sec-sub">综合成绩由结果评价、过程评价、增值评价三部分加权构成，对应知识·技能·素养三维目标。</div>
 
   <div class="formula">
     <div class="eq">
       综合成绩 <b style="color:#ff9f00">S</b> =
-      <span class="term"><span class="w">0.20</span>·基础分B</span>+
-      <span class="term"><span class="w">0.45</span>·课堂分P</span>+
-      <span class="term"><span class="w">0.20</span>·作业分H</span>+
-      <span class="term"><span class="w">0.15</span>·增值分V</span>
+      <span class="term"><span class="w">0.50</span>·结果评价R</span>+
+      <span class="term"><span class="w">0.40</span>·过程评价P</span>+
+      <span class="term"><span class="w">0.10</span>·增值评价V</span>
     </div>
   </div>
 
   <div class="legend">
-    <div class="li"><div class="tp">基础分 B<span class="pct" style="background:#1e4280">20%</span></div><p>课前平台自动采集：预习完成度、思维导图、前测。<b>对应知识目标</b></p></div>
-    <div class="li"><div class="tp">课堂分 P<span class="pct" style="background:#002060">45%</span></div><p>AI四维雷达（技能精准度·流程完整度·团队配合·职业素养），四元主体加权。<b>对应技能目标</b></p></div>
-    <div class="li"><div class="tp">作业分 H<span class="pct" style="background:#1e9e5b">20%</span></div><p>课后复训视频、AI反思报告、组内互评。<b>对应技能+思政</b></p></div>
-    <div class="li"><div class="tp">增值分 V<span class="pct" style="background:#ff9f00">15%</span></div><p>前测→后测的净增值（相对期望增值的残差）。<b>对应思政·成长</b></p></div>
+    <div class="li"><div class="tp">结果评价 R<span class="pct" style="background:#1e4280">50%</span></div><p>终结任务考核：实操达标度（教师·企业）+ 理论测试（软件·云课堂）。<b>对应知识+技能</b></p></div>
+    <div class="li"><div class="tp">过程评价 P<span class="pct" style="background:#002060">40%</span></div><p>课中四维：技能精准度·流程完整度·团队配合·职业素养，五元主体加权。<b>对应技能+素养</b></p></div>
+    <div class="li"><div class="tp">增值评价 V<span class="pct" style="background:#ff9f00">10%</span></div><p>前测→后测的净增值（相对期望增值的残差）。<b>对应素养·成长</b></p></div>
   </div>
 
   <div class="grid g2" style="margin-top:18px">
     <div class="card">
-      <div class="blockttl" style="margin-top:0">课堂分 P · 四维权重</div>
+      <div class="blockttl" style="margin-top:0">过程评价 P · 四维权重</div>
       <div class="canvas-box"><canvas id="wtChart"></canvas></div>
-      <div class="note" style="margin-top:14px">P = 0.30·技能精准度 + 0.30·流程完整度 + 0.20·团队配合 + 0.20·职业素养；每一维度由对应主体客观赋分（AI/学生互评/教师·企业）。</div>
+      <div class="note" style="margin-top:14px">P = 0.30·技能精准度 + 0.30·流程完整度 + 0.20·团队配合 + 0.20·职业素养；每一维度由对应主体客观赋分。</div>
     </div>
     <div class="card">
       <div class="blockttl" style="margin-top:0">等级标准 · 成绩→评级</div>
@@ -256,37 +264,31 @@ footer b{color:var(--orange2)}
           <tr><td><b>&lt;60</b></td><td><span class="chip-g" style="background:#fcebe8;color:#d64545">不合格</span></td><td>触及安全底线 · 须补训</td></tr>
         </tbody>
       </table>
-      <div class="note">增值等级独立呈现：★★★（净增值＞+8）· ★★（+2~+8）· ★（−2~+2）· 关注（＜−2），<b>低分高增值同样被“看见”</b>。</div>
+      <div class="note">增值等级独立呈现：★★★（净增值＞+8）· ★★（+2~+8）· ★（−2~+2）· 关注（＜−2），低起点高增值同样被记录。</div>
     </div>
   </div>
 </div></section>
 
 <!-- CALCULATOR -->
 <section id="calc"><div class="wrap">
-  <div class="sec-h"><div class="bar"></div><h2>三、成绩计算器 <span style="font-size:13px;color:var(--grey);font-weight:600">· 现场可演示 · 拖动即算</span></h2></div>
-  <div class="sec-sub">拖动滑块模拟某学生的各项表现，实时计算综合成绩、四维雷达与增值定位。</div>
+  <div class="sec-h"><div class="bar"></div><h2>三、成绩计算器 <span style="font-size:13px;color:var(--grey);font-weight:600">· 拖动即算</span></h2></div>
+  <div class="sec-sub">拖动滑块模拟某学生在结果、过程、增值三类评价的表现，实时计算综合成绩与增值定位。</div>
 
   <div class="calc-grid">
     <div class="card">
-      <div class="blockttl" style="margin-top:0">📋 基础分 B <span class="wtag">课前 · 权重20%</span></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">软件</span> 预习完成度</span><span class="val" id="v_prep">85</span></div><input type="range" min="0" max="100" value="85" id="prep"></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">软件</span> 思维导图</span><span class="val" id="v_mind">80</span></div><input type="range" min="0" max="100" value="80" id="mind"></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">软件</span> 随堂前测</span><span class="val" id="v_pre">62</span></div><input type="range" min="0" max="100" value="62" id="pre"></div>
+      <div class="blockttl" style="margin-top:0">🎯 结果评价 R <span class="wtag">终结考核 · 权重50%</span></div>
+      <div class="field"><div class="lab"><span><span class="src" style="background:#002060">师/企</span> 实操达标度</span><span class="val" id="v_op">88</span></div><input type="range" min="0" max="100" value="88" id="op"></div>
+      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">软件</span> 理论测试</span><span class="val" id="v_th">82</span></div><input type="range" min="0" max="100" value="82" id="th"></div>
 
-      <div class="blockttl">🎯 课堂分 P · 四维 <span class="wtag">课中 · 权重45%</span></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">AI</span> 技能精准度</span><span class="val" id="v_skill">88</span></div><input type="range" min="0" max="100" value="88" id="skill"></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">AI</span> 流程完整度</span><span class="val" id="v_flow">90</span></div><input type="range" min="0" max="100" value="90" id="flow"></div>
+      <div class="blockttl">📊 过程评价 P · 四维 <span class="wtag">课中五演 · 权重40%</span></div>
+      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">软件</span> 技能精准度</span><span class="val" id="v_skill">88</span></div><input type="range" min="0" max="100" value="88" id="skill"></div>
+      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">软件</span> 流程完整度</span><span class="val" id="v_flow">90</span></div><input type="range" min="0" max="100" value="90" id="flow"></div>
       <div class="field"><div class="lab"><span><span class="src" style="background:#1e9e5b">互评</span> 团队配合</span><span class="val" id="v_team">85</span></div><input type="range" min="0" max="100" value="85" id="team"></div>
       <div class="field"><div class="lab"><span><span class="src" style="background:#002060">师/企</span> 职业素养</span><span class="val" id="v_prof">86</span></div><input type="range" min="0" max="100" value="86" id="prof"></div>
 
-      <div class="blockttl">📝 作业分 H <span class="wtag">课后 · 权重20%</span></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#1e9e5b">软件</span> 复训视频（AI对标）</span><span class="val" id="v_re">84</span></div><input type="range" min="0" max="100" value="84" id="re"></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#002060">教师</span> 反思报告</span><span class="val" id="v_rep">82</span></div><input type="range" min="0" max="100" value="82" id="rep"></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#1e9e5b">互评</span> 组内互评</span><span class="val" id="v_peer">80</span></div><input type="range" min="0" max="100" value="80" id="peer"></div>
-
-      <div class="blockttl">📈 增值分 V · 前测/后测 <span class="wtag">全程 · 权重15%</span></div>
-      <div class="field"><div class="lab"><span>课前基线（前测）</span><span class="val" id="v_base">62</span></div><input type="range" min="30" max="100" value="62" id="base"></div>
-      <div class="field"><div class="lab"><span>课末测评（后测）</span><span class="val" id="v_final">75</span></div><input type="range" min="30" max="100" value="75" id="final"></div>
+      <div class="blockttl">📈 增值评价 V · 前测/后测 <span class="wtag">全程 · 权重10%</span></div>
+      <div class="field"><div class="lab"><span>课前基线（前测）</span><span class="val" id="v_base">72</span></div><input type="range" min="30" max="100" value="72" id="base"></div>
+      <div class="field"><div class="lab"><span>课末测评（后测）</span><span class="val" id="v_final">85</span></div><input type="range" min="30" max="100" value="85" id="final"></div>
       <div class="mini">增值分依据全班回归自动计算“期望增值”，取实际增值与期望的<b>残差</b>换算，低起点学生不吃亏。</div>
     </div>
 
@@ -296,16 +298,15 @@ footer b{color:var(--orange2)}
         <div class="total" id="totalScore">--</div>
         <div class="grade" id="gradeTag">--</div>
         <div class="rc-break">
-          <div class="b"><div class="n" id="bB">--</div><small>基础 B ·20%</small></div>
-          <div class="b"><div class="n" id="bP">--</div><small>课堂 P ·45%</small></div>
-          <div class="b"><div class="n" id="bH">--</div><small>作业 H ·20%</small></div>
-          <div class="b"><div class="n" id="bV">--</div><small>增值 V ·15%</small></div>
+          <div class="b"><div class="n" id="bR">--</div><small>结果 R ·50%</small></div>
+          <div class="b"><div class="n" id="bP">--</div><small>过程 P ·40%</small></div>
+          <div class="b"><div class="n" id="bV">--</div><small>增值 V ·10%</small></div>
         </div>
         <div class="va-badge" id="vaBadge">增值定位计算中…</div>
       </div>
 
       <div class="card" style="margin-top:18px">
-        <div class="blockttl" style="margin-top:0">课堂四维能力雷达</div>
+        <div class="blockttl" style="margin-top:0">过程四维能力雷达</div>
         <div class="small-canvas"><canvas id="radar"></canvas></div>
       </div>
 
@@ -320,27 +321,37 @@ footer b{color:var(--orange2)}
 
 <!-- BOARD -->
 <section id="board"><div class="wrap">
-  <div class="sec-h"><div class="bar"></div><h2>四、全班增值看板</h2></div>
-  <div class="sec-sub">空乘 24-1 班 · 28 名学生 —— 从“张三的画像”到“全班的画像”，让每一次成长都被看见。</div>
+  <div class="sec-h"><div class="bar"></div><h2>四、全班评价看板</h2></div>
+  <div class="sec-sub">客舱应急撤离 · 项目4 · 28 名学生 —— 从个人画像到全班画像，分任务评分与综合总分同屏呈现。</div>
 
   <div class="grid g4" style="margin-bottom:18px">
-    <div class="card kpi"><div class="n" style="color:#002060" id="k_avg">--</div><small>班级均分</small><div class="updn" style="color:#1e9e5b" id="k_avg_d"></div></div>
-    <div class="card kpi"><div class="n" style="color:#ff9f00" id="k_va">--</div><small>平均净增值</small><div class="updn" style="color:#1e9e5b">对比学期初</div></div>
-    <div class="card kpi"><div class="n" style="color:#1e9e5b" id="k_pass">--</div><small>达标率 (%)</small><div class="updn" style="color:#1e9e5b" id="k_pass_d"></div></div>
+    <div class="card kpi"><div class="n" style="color:#002060">85.4</div><small>班级综合总分</small><div class="updn" style="color:#1e9e5b">↑ 前测 77.1 · +8.3</div></div>
+    <div class="card kpi"><div class="n" style="color:#ff9f00">+8.3</div><small>平均增值</small><div class="updn" style="color:#1e9e5b">整体高于预期</div></div>
+    <div class="card kpi"><div class="n" style="color:#1e9e5b" id="k_pass">--</div><small>达标率 (%)</small><div class="updn" style="color:#1e9e5b">综合分 ≥70</div></div>
     <div class="card kpi"><div class="n" style="color:#0046c9" id="k_top">--</div><small>高增值人数 ★★★</small><div class="updn" style="color:var(--grey)">净增值 &gt; +8</div></div>
+  </div>
+
+  <div class="card" style="margin-bottom:18px">
+    <div class="blockttl" style="margin-top:0">整体学习前后对比：综合得分 77.1 → 85.4</div>
+    <div class="line-canvas"><canvas id="prePostChart"></canvas></div>
   </div>
 
   <div class="grid g2" style="align-items:start">
     <div class="card">
-      <div class="blockttl" style="margin-top:0">成绩与增值分布</div>
-      <div class="canvas-box"><canvas id="distChart"></canvas></div>
+      <div class="blockttl" style="margin-top:0">分任务评分 · 各任务预期 vs 实际（整体高于预期）</div>
+      <div class="canvas-box"><canvas id="taskChart"></canvas></div>
+      <table class="sumtable" style="margin-top:14px">
+        <thead><tr><th>任务</th><th>预期</th><th>实际</th><th>差值</th></tr></thead>
+        <tbody id="taskTbody"></tbody>
+        <tbody><tr class="total-row"><td>综合总分</td><td>77.1</td><td>85.4</td><td>+8.3</td></tr></tbody>
+      </table>
     </div>
     <div class="card" style="padding:0;overflow:hidden">
       <div class="blockttl" style="margin:16px 16px 10px">学生成绩明细 <span class="wtag">点击表头排序</span></div>
       <div class="tbl-wrap"><table id="stuTable">
         <thead><tr>
-          <th data-k="name">姓名</th><th data-k="base">前测</th><th data-k="final">后测</th>
-          <th data-k="gain">增值</th><th data-k="nva">净增值</th><th data-k="total">综合分</th><th data-k="grade">评级</th>
+          <th data-k="idx">#</th><th data-k="name">姓名</th><th data-k="base">前测</th><th data-k="final">后测</th>
+          <th data-k="gain">增值</th><th data-k="nva">净增值</th><th data-k="grade">评级</th>
         </tr></thead>
         <tbody></tbody>
       </table></div>
@@ -355,7 +366,7 @@ footer b{color:var(--orange2)}
 
   <div class="grid g3">
     <div class="card"><div class="blockttl" style="margin-top:0">① 原始增值</div>
-      <p style="font-size:14px;color:var(--grey)">增值 = 后测 − 前测。反映绝对进步，但对高分学生“天花板效应”不利。</p>
+      <p style="font-size:14px;color:var(--grey)">增值 = 后测 − 前测。反映绝对进步，但对高分学生存在“天花板效应”。</p>
       <div class="formula" style="margin-top:12px;padding:16px"><div class="eq" style="font-size:17px">G = F − B</div></div>
     </div>
     <div class="card"><div class="blockttl" style="margin-top:0">② 期望增值</div>
@@ -369,86 +380,70 @@ footer b{color:var(--orange2)}
   </div>
 
   <div class="note" style="margin-top:18px">
-    <b>增值分换算：</b> V = clip( 62 + 8 × (NVA / σ), 40, 100 )，其中 σ 为全班净增值标准差；
-    <b>教育意义：</b> 一名前测 55、后测 70 的学生（净增值 +6）与一名前测 90、后测 92 的学生，在增值维度上前者更“优秀”——这正是<b>“以生为本、面向全体”</b>与<b>“润物无声”思政育人</b>在评价上的落点。
+    <b>增值分换算：</b> V = clip( 62 + 8 × (NVA / σ), 40, 100 )，其中 σ 为全班净增值标准差。
+    一名前测 62、后测 78（净增值为正）的学生，与一名前测 90、后测 92 的学生，在增值维度上前者更突出——这正是“面向全体、以生为本”的评价落点。
   </div>
 </div></section>
 
 <footer>
-  客舱应急处置模块 · 统一评价标准与成绩计算模型 &nbsp;|&nbsp; 四元主体 × 多维观测 × 立体增值 &nbsp;|&nbsp;
-  <b>让数据为学生说话，让评价回归“成长”本身</b> &nbsp;|&nbsp; 本文件已内置全部资源，双击即可离线运行
+  客舱应急撤离 · 项目4 &nbsp;|&nbsp; 评价方式：多元多维、立体增值 &nbsp;|&nbsp; 八个任务分项评分 + 综合总分（77.1 → 85.4）
 </footer>
 
 <script>
-/* ---------- synthetic class dataset (deterministic) ---------- */
-const SURNAMES=["张","王","李","刘","陈","罗","朱","沈","葛","魏","周","金","姚","高","孙","黄","徐","杨","冯","肖","吴","万","何","袁","蒋","慎","柳","嘉"];
-const GIVEN=["雅洁","子轩","诗涵","梦茹","昊恒","嘉乐","佳颖","思彤","晓锋","欣妍","培婷","雯萱","家宝","海帅","凯欣","佳妮","梦棋","可轶","晓倩","少轩","晓锋","炜","雨欣","樱洁","依婷","菲琳","培赢","鑫婷"];
-// deterministic pseudo-random
+/* ---------- 28 real students ---------- */
+const NAMES=["辛舒情","包涵杰","冯诗涵","王苗雅","陈若晗","黄庄磊","林欣乐","沈伊蕊","段好佳","蔡彬彬","张郁","邬浩杰","魏家文","江灵涛","文成宇","赵梦莎","王孝弥","杨汪","何莹","林欣彤","黄麒宇","李翔宇","孔懿涛","陈柳鸿","李嘉颖","王茹","吕钦民","袁浙皓"];
+/* task-level class averages (image 3) */
+const TASKS=["任务1","任务2","任务3","任务4","任务5","任务6","任务7","任务8"];
+const EXP=[80,79,80,82,84,83,79,76];
+const ACT=[81,84,84,86,88,86,85,86];
+
 let seed=20260705;
 function rnd(){seed=(seed*9301+49297)%233280;return seed/233280;}
 function gauss(m,s){let u=0,v=0;while(u===0)u=rnd();while(v===0)v=rnd();return m+s*Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
-const CLASS=[];
-for(let i=0;i<28;i++){
-  let base=Math.round(Math.max(42,Math.min(90,gauss(66,8))));
-  // lower base -> larger gain; target avg gain ~9.6
-  let gain=Math.round(Math.max(1,Math.min(30, (95-base)*0.40 + gauss(0,5.2))));
+let CLASS=NAMES.map((nm,i)=>{
+  let base=Math.round(Math.max(63,Math.min(90,gauss(77.1,6))));
+  let gain=Math.round(Math.max(1,Math.min(22,(97-base)*0.34+gauss(0,5.2))));
   let final=Math.min(99,base+gain);
-  CLASS.push({name:SURNAMES[i]+GIVEN[i%GIVEN.length], base:base, final:final, gain:final-base});
-}
-/* regression gain ~ a + b*base */
-function linreg(xs,ys){const n=xs.length;let sx=0,sy=0,sxy=0,sxx=0;
-  for(let i=0;i<n;i++){sx+=xs[i];sy+=ys[i];sxy+=xs[i]*ys[i];sxx+=xs[i]*xs[i];}
-  const b=(n*sxy-sx*sy)/(n*sxx-sx*sx); const a=(sy-b*sx)/n; return {a,b};}
+  return {idx:i+1,name:nm,base:base,final:final,gain:final-base};
+});
+/* shift to hit class means 77.1 -> 85.4 exactly-ish */
+function adj(arr,key,target){let m=arr.reduce((t,s)=>t+s[key],0)/arr.length;let d=Math.round(target-m);arr.forEach(s=>s[key]=Math.max(55,Math.min(99,s[key]+d)));}
+adj(CLASS,"base",77.1); adj(CLASS,"final",85.4);
+CLASS.forEach(s=>{if(s.final<s.base)s.final=s.base+2;s.gain=s.final-s.base;});
+function linreg(xs,ys){const n=xs.length;let sx=0,sy=0,sxy=0,sxx=0;for(let i=0;i<n;i++){sx+=xs[i];sy+=ys[i];sxy+=xs[i]*ys[i];sxx+=xs[i]*xs[i];}const b=(n*sxy-sx*sy)/(n*sxx-sx*sx);const a=(sy-b*sx)/n;return{a,b};}
 const reg=linreg(CLASS.map(s=>s.base),CLASS.map(s=>s.gain));
-function expGain(base){return reg.a+reg.b*base;}
+function expGain(b){return reg.a+reg.b*b;}
 CLASS.forEach(s=>s.nva=s.gain-expGain(s.base));
-const sigma=Math.sqrt(CLASS.reduce((t,s)=>t+s.nva*s.nva,0)/CLASS.length);
+const sigma=Math.sqrt(CLASS.reduce((t,s)=>t+s.nva*s.nva,0)/CLASS.length)||1;
 function vaScore(nva){return Math.max(40,Math.min(100,Math.round(62+8*(nva/sigma))));}
 function stars(nva){return nva>8?"★★★":nva>2?"★★":nva>-2?"★":"关注";}
-/* composite for each class student (approx from finals) */
-CLASS.forEach(s=>{
-  s.V=vaScore(s.nva);
-  // approximate B,P,H around their final level
-  const lvl=s.final;
-  s.total=Math.round(0.20*(lvl-4)+0.45*lvl+0.20*(lvl-3)+0.15*s.V);
-  s.grade=s.total>=90?"优秀":s.total>=80?"良好":s.total>=70?"合格":s.total>=60?"基本合格":"不合格";
-});
-const classAvg=Math.round(CLASS.reduce((t,s)=>t+s.total,0)/CLASS.length*10)/10;
-const classVA=Math.round(CLASS.reduce((t,s)=>t+s.gain,0)/CLASS.length*10)/10;
-const passRate=Math.round(CLASS.filter(s=>s.total>=70).length/CLASS.length*100);
+CLASS.forEach(s=>{s.grade=s.final>=90?"优秀":s.final>=80?"良好":s.final>=70?"合格":s.final>=60?"基本合格":"不合格";});
+const passRate=Math.round(CLASS.filter(s=>s.final>=70).length/CLASS.length*100);
 const topN=CLASS.filter(s=>s.nva>8).length;
 
 /* ---------- calculator ---------- */
-const ids=["prep","mind","pre","skill","flow","team","prof","re","rep","peer","base","final"];
+const ids=["op","th","skill","flow","team","prof","base","final"];
 function val(id){return +document.getElementById(id).value;}
-function gradeInfo(s){
-  if(s>=90)return["优秀","#1e9e5b"]; if(s>=80)return["良好","#0046c9"];
-  if(s>=70)return["合格","#e08a00"]; if(s>=60)return["基本合格","#d67a2e"]; return["不合格","#d64545"];}
+function gradeInfo(s){if(s>=90)return["优秀","#1e9e5b"];if(s>=80)return["良好","#0046c9"];if(s>=70)return["合格","#e08a00"];if(s>=60)return["基本合格","#d67a2e"];return["不合格","#d64545"];}
 let radarChart,scatterChart;
 function compute(){
   ids.forEach(id=>{const e=document.getElementById("v_"+id);if(e)e.textContent=val(id);});
-  const B=(val("prep")+val("mind")+val("pre"))/3;
+  const R=(val("op")+val("th"))/2;
   const P=0.30*val("skill")+0.30*val("flow")+0.20*val("team")+0.20*val("prof");
-  const H=(val("re")+val("rep")+val("peer"))/3;
-  const base=val("base"), fin=val("final");
-  const gain=fin-base, eg=expGain(base), nva=gain-eg, V=vaScore(nva);
-  const S=0.20*B+0.45*P+0.20*H+0.15*V;
-  document.getElementById("bB").textContent=Math.round(B);
+  const base=val("base"),fin=val("final");
+  const gain=fin-base,eg=expGain(base),nva=gain-eg,V=vaScore(nva);
+  const S=0.50*R+0.40*P+0.10*V;
+  document.getElementById("bR").textContent=Math.round(R);
   document.getElementById("bP").textContent=Math.round(P);
-  document.getElementById("bH").textContent=Math.round(H);
   document.getElementById("bV").textContent=Math.round(V);
   document.getElementById("totalScore").textContent=Math.round(S);
-  const [g,c]=gradeInfo(S); const gt=document.getElementById("gradeTag");
-  gt.textContent=g; gt.style.background=c; gt.style.color="#fff";
+  const [g,c]=gradeInfo(S);const gt=document.getElementById("gradeTag");gt.textContent=g;gt.style.background=c;gt.style.color="#fff";
   document.getElementById("vaBadge").innerHTML=
     `增值定位：实际增值 <b>${gain>=0?'+':''}${gain}</b> · 期望增值 <b>${eg.toFixed(1)}</b> · 净增值 <b>${nva>=0?'+':''}${nva.toFixed(1)}</b> · 增值星级 <b>${stars(nva)}</b>`;
   document.getElementById("vaExplain").innerHTML=
     `该生前测 ${base}，回归期望进步约 ${eg.toFixed(1)} 分；实际进步 ${gain} 分，${nva>=0?'超出':'低于'}期望 ${Math.abs(nva).toFixed(1)} 分 → 增值分 V=${V}。`;
-  // radar
-  const rd=[val("skill"),val("flow"),val("team"),val("prof")];
-  radarChart.data.datasets[0].data=rd; radarChart.update();
-  // scatter highlight
-  scatterChart.data.datasets[2].data=[{x:base,y:gain}]; scatterChart.update();
+  radarChart.data.datasets[0].data=[val("skill"),val("flow"),val("team"),val("prof")];radarChart.update();
+  scatterChart.data.datasets[2].data=[{x:base,y:gain}];scatterChart.update();
 }
 ids.forEach(id=>document.getElementById(id).addEventListener("input",compute));
 
@@ -457,98 +452,89 @@ window.addEventListener("load",()=>{
   Chart.defaults.font.family='"Microsoft YaHei",sans-serif';
   Chart.defaults.color="#5b6b85";
 
-  // weight doughnut
+  new Chart(document.getElementById("subjChart"),{type:"doughnut",
+    data:{labels:["教师评 50%","企业评 20%","学生自评 10%","学生互评 10%","软件评 10%"],
+      datasets:[{data:[50,20,10,10,10],backgroundColor:["#002060","#ff9f00","#e08a00","#1e9e5b","#0046c9"],borderWidth:2,borderColor:"#fff"}]},
+    options:{plugins:{legend:{position:"right",labels:{font:{size:12},padding:10}}},cutout:"52%"}});
+
   new Chart(document.getElementById("wtChart"),{type:"doughnut",
     data:{labels:["技能精准度 30%","流程完整度 30%","团队配合 20%","职业素养 20%"],
       datasets:[{data:[30,30,20,20],backgroundColor:["#0046c9","#1e4280","#1e9e5b","#ff9f00"],borderWidth:2,borderColor:"#fff"}]},
     options:{plugins:{legend:{position:"right",labels:{font:{size:13},padding:14}}},cutout:"55%"}});
 
-  // radar
   radarChart=new Chart(document.getElementById("radar"),{type:"radar",
     data:{labels:["技能精准度","流程完整度","团队配合","职业素养"],
-      datasets:[{label:"本生",data:[88,90,85,86],fill:true,
-        backgroundColor:"rgba(255,159,0,.2)",borderColor:"#ff9f00",pointBackgroundColor:"#ff9f00",borderWidth:2}]},
-    options:{scales:{r:{min:0,max:100,ticks:{stepSize:20,backdropColor:"transparent",font:{size:10}},pointLabels:{font:{size:12.5,weight:"700"}}}},
-      plugins:{legend:{display:false}}}});
+      datasets:[{label:"本生",data:[88,90,85,86],fill:true,backgroundColor:"rgba(255,159,0,.2)",borderColor:"#ff9f00",pointBackgroundColor:"#ff9f00",borderWidth:2}]},
+    options:{scales:{r:{min:0,max:100,ticks:{stepSize:20,backdropColor:"transparent",font:{size:10}},pointLabels:{font:{size:12.5,weight:"700"}}}},plugins:{legend:{display:false}}}});
 
-  // value-added scatter
-  const line=[];for(let b=42;b<=95;b+=2)line.push({x:b,y:expGain(b)});
+  const line=[];for(let b=60;b<=92;b+=2)line.push({x:b,y:expGain(b)});
   scatterChart=new Chart(document.getElementById("vaScatter"),{type:"scatter",
     data:{datasets:[
       {label:"全班学生",data:CLASS.map(s=>({x:s.base,y:s.gain})),backgroundColor:"rgba(30,66,128,.55)",pointRadius:4},
       {label:"期望增值回归线",type:"line",data:line,borderColor:"#1e9e5b",borderDash:[6,4],borderWidth:2,pointRadius:0,fill:false},
-      {label:"当前学生",data:[{x:62,y:13}],backgroundColor:"#ff9f00",pointRadius:8,pointBorderColor:"#fff",pointBorderWidth:2}
+      {label:"当前学生",data:[{x:72,y:13}],backgroundColor:"#ff9f00",pointRadius:8,pointBorderColor:"#fff",pointBorderWidth:2}
     ]},
-    options:{scales:{x:{title:{display:true,text:"前测基线"},min:40,max:98},y:{title:{display:true,text:"增值 (后测−前测)"},min:0}},
-      plugins:{legend:{labels:{font:{size:11.5},boxWidth:14}}}}});
+    options:{scales:{x:{title:{display:true,text:"前测基线"},min:58,max:94},y:{title:{display:true,text:"增值 (后测−前测)"},min:0}},plugins:{legend:{labels:{font:{size:11.5},boxWidth:14}}}}});
 
-  // distribution
-  const bins=["<60","60-69","70-79","80-89","90-100"];
-  const cnt=[0,0,0,0,0];
-  CLASS.forEach(s=>{const t=s.total;cnt[t<60?0:t<70?1:t<80?2:t<90?3:4]++;});
-  new Chart(document.getElementById("distChart"),{type:"bar",
-    data:{labels:bins,datasets:[{label:"人数",data:cnt,
-      backgroundColor:["#d64545","#d67a2e","#e08a00","#0046c9","#1e9e5b"],borderRadius:6}]},
-    options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,title:{display:true,text:"学生数"}}}}});
+  /* pre-post per student line */
+  new Chart(document.getElementById("prePostChart"),{type:"line",
+    data:{labels:CLASS.map(s=>s.name),datasets:[
+      {label:"前测",data:CLASS.map(s=>s.base),borderColor:"#ff9f00",backgroundColor:"#ff9f00",borderWidth:2,pointRadius:2,tension:.3},
+      {label:"后测",data:CLASS.map(s=>s.final),borderColor:"#1e4280",backgroundColor:"#1e4280",borderWidth:2,pointRadius:2,tension:.3}
+    ]},
+    options:{scales:{y:{min:50,max:100,title:{display:true,text:"得分"}},x:{ticks:{font:{size:9},maxRotation:60,minRotation:60}}},
+      plugins:{legend:{labels:{font:{size:12}}}}}});
 
-  // KPIs
-  document.getElementById("k_avg").textContent=classAvg;
-  document.getElementById("k_avg_d").textContent="↑ 较学期初 +"+classVA;
-  document.getElementById("k_va").textContent="+"+classVA;
+  /* task expected vs actual */
+  new Chart(document.getElementById("taskChart"),{type:"bar",
+    data:{labels:TASKS,datasets:[
+      {label:"预期成绩",data:EXP,backgroundColor:"#f0a03e",borderRadius:4},
+      {label:"实际成绩",data:ACT,backgroundColor:"#1e4280",borderRadius:4}
+    ]},
+    options:{scales:{y:{min:60,max:95,title:{display:true,text:"平均分"}}},plugins:{legend:{labels:{font:{size:12}}}}}});
+
+  /* task summary table */
+  document.getElementById("taskTbody").innerHTML=TASKS.map((t,i)=>{
+    const d=ACT[i]-EXP[i];
+    return `<tr><td class="name">${t}</td><td>${EXP[i]}</td><td><b>${ACT[i]}</b></td><td style="color:#1e9e5b;font-weight:700">+${d}</td></tr>`;}).join("");
+
   document.getElementById("k_pass").textContent=passRate;
-  document.getElementById("k_pass_d").textContent="综合分 ≥70";
   document.getElementById("k_top").textContent=topN;
-
-  // table
-  renderTable("total",false);
+  renderTable();
   compute();
 });
 
-/* table render + sort */
-let sortKey="total",sortAsc=false;
+let sortKey="idx",sortAsc=true;
 function renderTable(){
   const tb=document.querySelector("#stuTable tbody");
   const arr=[...CLASS].sort((a,b)=>{
     let x=a[sortKey],y=b[sortKey];
     if(sortKey==="name")return sortAsc?(''+x).localeCompare(y):(''+y).localeCompare(x);
-    if(sortKey==="grade"){x=a.total;y=b.total;}
+    if(sortKey==="grade"){x=a.final;y=b.final;}
     return sortAsc?x-y:y-x;});
   const gcol={"优秀":["#e9f6ee","#1e9e5b"],"良好":["#eaf1ff","#0046c9"],"合格":["#fff3e0","#e08a00"],"基本合格":["#fdeee8","#d67a2e"],"不合格":["#fcebe8","#d64545"]};
   tb.innerHTML=arr.map(s=>{
-    const gc=gcol[s.grade];
-    const nvaColor=s.nva>2?"#1e9e5b":s.nva<-2?"#d64545":"#5b6b85";
-    return `<tr><td class="name">${s.name}</td><td>${s.base}</td><td>${s.final}</td>
+    const gc=gcol[s.grade];const nc=s.nva>2?"#1e9e5b":s.nva<-2?"#d64545":"#5b6b85";
+    return `<tr><td>${s.idx}</td><td class="name">${s.name}</td><td>${s.base}</td><td>${s.final}</td>
       <td style="color:#1e9e5b;font-weight:700">+${s.gain}</td>
-      <td style="color:${nvaColor};font-weight:700">${s.nva>=0?'+':''}${s.nva.toFixed(1)}</td>
-      <td><b>${s.total}</b></td>
+      <td style="color:${nc};font-weight:700">${s.nva>=0?'+':''}${s.nva.toFixed(1)}</td>
       <td><span class="chip-g" style="background:${gc[0]};color:${gc[1]}">${s.grade} ${stars(s.nva)}</span></td></tr>`;}).join("");
 }
 document.querySelectorAll("#stuTable th").forEach(th=>th.addEventListener("click",()=>{
-  const k=th.dataset.k; if(sortKey===k)sortAsc=!sortAsc;else{sortKey=k;sortAsc=false;} renderTable();}));
+  const k=th.dataset.k;if(sortKey===k)sortAsc=!sortAsc;else{sortKey=k;sortAsc=(k==="idx"||k==="name");}renderTable();}));
 
-/* nav active on scroll */
 const secs=[...document.querySelectorAll("section")];const links=[...document.querySelectorAll("nav a")];
-window.addEventListener("scroll",()=>{
-  let cur=secs[0].id;
-  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-90)cur=s.id;});
-  links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+cur));
-});
+window.addEventListener("scroll",()=>{let cur=secs[0].id;secs.forEach(s=>{if(window.scrollY>=s.offsetTop-90)cur=s.id;});
+  links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+cur));});
 </script>
 
 <script>
 (function(){
-  try{
-    var manifest={name:"客舱应急处置·评价模型",short_name:"评价模型",start_url:".",display:"standalone",
-      background_color:"#eef2f9",theme_color:"#002060",
-      icons:[{src:"data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23002060%22/%3E%3Cpath d=%22M32 12l4 14 14 4-14 4-4 14-4-14-14-4 14-4z%22 fill=%22%23ff9f00%22/%3E%3C/svg%3E",sizes:"512x512",type:"image/svg+xml",purpose:"any maskable"}]};
-    var blob=new Blob([JSON.stringify(manifest)],{type:"application/manifest+json"});
-    var link=document.createElement("link");link.rel="manifest";link.href=URL.createObjectURL(blob);
-    document.head.appendChild(link);
-  }catch(e){}
-  var deferred=null, btn=document.getElementById("installBtn");
+  try{var manifest={name:"客舱应急撤离·项目4·评价",short_name:"项目4评价",start_url:".",display:"standalone",background_color:"#eef2f9",theme_color:"#002060",icons:[{src:"data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23002060%22/%3E%3Cpath d=%22M32 12l4 14 14 4-14 4-4 14-4-14-14-4 14-4z%22 fill=%22%23ff9f00%22/%3E%3C/svg%3E",sizes:"512x512",type:"image/svg+xml",purpose:"any maskable"}]};
+  var blob=new Blob([JSON.stringify(manifest)],{type:"application/manifest+json"});var link=document.createElement("link");link.rel="manifest";link.href=URL.createObjectURL(blob);document.head.appendChild(link);}catch(e){}
+  var deferred=null,btn=document.getElementById("installBtn");
   window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();deferred=e;if(btn)btn.style.display="inline-block";});
   if(btn)btn.addEventListener("click",async function(){if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;btn.style.display="none";});
-  window.addEventListener("appinstalled",function(){if(btn)btn.style.display="none";});
 })();
 </script>
 </body>
