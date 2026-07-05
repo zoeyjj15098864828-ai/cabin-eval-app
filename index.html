@@ -75,7 +75,7 @@ section{padding:44px 0;border-bottom:1px solid rgba(0,32,96,.06)}
 .type-band small{opacity:.9;font-size:12.5px}
 .type-band .pc{font-size:30px;font-weight:800}
 
-.subj-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.subj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media(max-width:860px){.subj-grid{grid-template-columns:repeat(2,1fr)}}
 .subj{border-radius:12px;padding:14px 10px;text-align:center;border:1.5px solid var(--line);background:#fff}
 .subj .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 8px;color:#fff}
@@ -173,7 +173,7 @@ footer b{color:var(--orange2)}
     <h1>客舱应急撤离</h1>
     <p>评价方案与成绩计算模型 · 贯穿课前·课中·课后全过程，多元多维、立体增值的考核评价</p>
     <div class="pill-row">
-      <div class="pill" style="background:#0d3b1f;border-color:#1e9e5b"><b style="color:#4ade80">● 离线可用</b> 无需联网</div><button id="installBtn" class="pill" style="display:none;cursor:pointer;background:#ff9f00;border-color:#ff9f00;color:#002060;font-weight:800">⤓ 安装到设备</button><div class="pill"><b>五元主体</b> 教师·企业·学生自评·互评·软件</div>
+      <div class="pill" style="background:#0d3b1f;border-color:#1e9e5b"><b style="color:#4ade80">● 离线可用</b> 无需联网</div><button id="installBtn" class="pill" style="display:none;cursor:pointer;background:#ff9f00;border-color:#ff9f00;color:#002060;font-weight:800">⤓ 安装到设备</button><div class="pill"><b>四元主体</b> 教师·学生·企业导师·考评系统</div>
       <div class="pill"><b>三类评价</b> 结果·过程·增值</div>
       <div class="pill"><b>六维观测</b> 展现·行动·态度·能力·心理·职业</div>
     </div>
@@ -213,13 +213,12 @@ footer b{color:var(--orange2)}
     </div>
 
     <div class="card">
-      <div class="blockttl" style="margin-top:0">评价主体 · 五元加权（谁来评）</div>
+      <div class="blockttl" style="margin-top:0">评价主体 · 四元加权（谁来评）</div>
       <div class="subj-grid">
-        <div class="subj" style="border-color:#002060"><div class="ic" style="background:#002060">👨‍🏫</div><h5>教师评</h5><div class="w" style="color:#002060">50%</div><small>规范把关</small></div>
-        <div class="subj" style="border-color:#ff9f00"><div class="ic" style="background:#ff9f00">🏢</div><h5>企业评</h5><div class="w" style="color:#ff9f00">20%</div><small>岗位标准</small></div>
-        <div class="subj" style="border-color:#e08a00"><div class="ic" style="background:#e08a00">🙋</div><h5>学生自评</h5><div class="w" style="color:#e08a00">10%</div><small>反思诊断</small></div>
-        <div class="subj" style="border-color:#1e9e5b"><div class="ic" style="background:#1e9e5b">👥</div><h5>学生互评</h5><div class="w" style="color:#1e9e5b">10%</div><small>团队配合</small></div>
-        <div class="subj" style="border-color:#0046c9"><div class="ic" style="background:#0046c9">🤖</div><h5>软件评</h5><div class="w" style="color:#0046c9">10%</div><small>客观数据</small></div>
+        <div class="subj" style="border-color:#002060"><div class="ic" style="background:#002060">👨‍🏫</div><h5>教师</h5><div class="w" style="color:#002060">50%</div><small>规范把关</small></div>
+        <div class="subj" style="border-color:#1e9e5b"><div class="ic" style="background:#1e9e5b">👥</div><h5>学生</h5><div class="w" style="color:#1e9e5b">20%</div><small>自评 + 互评</small></div>
+        <div class="subj" style="border-color:#ff9f00"><div class="ic" style="background:#ff9f00">🏢</div><h5>企业导师</h5><div class="w" style="color:#ff9f00">20%</div><small>岗位标准</small></div>
+        <div class="subj" style="border-color:#0046c9"><div class="ic" style="background:#0046c9">🤖</div><h5>考评系统</h5><div class="w" style="color:#0046c9">10%</div><small>AI 客观数据</small></div>
       </div>
       <div style="height:230px;position:relative;margin-top:16px"><canvas id="subjChart"></canvas></div>
     </div>
@@ -240,13 +239,12 @@ footer b{color:var(--orange2)}
         </div>
       </div>
       <div class="mcol">
-        <div class="mcol-h" style="background:linear-gradient(135deg,#1e4280,#2b5aa0)"><span class="num">五</span>评价手段 <small>谁来评</small></div>
+        <div class="mcol-h" style="background:linear-gradient(135deg,#1e4280,#2b5aa0)"><span class="num">四</span>评价手段 <small>谁来评</small></div>
         <div class="mchips">
-          <div class="mchip"><span class="dot" style="background:#0046c9"></span><b>软件评</b>AI 客观数据</div>
-          <div class="mchip"><span class="dot" style="background:#e08a00"></span><b>学生自评</b>反思诊断</div>
-          <div class="mchip"><span class="dot" style="background:#1e9e5b"></span><b>学生互评</b>同伴团队</div>
-          <div class="mchip"><span class="dot" style="background:#ff9f00"></span><b>企业评</b>岗位视角</div>
-          <div class="mchip"><span class="dot" style="background:#002060"></span><b>教师评</b>规范把关</div>
+          <div class="mchip"><span class="dot" style="background:#002060"></span><b>教师</b>规范把关</div>
+          <div class="mchip"><span class="dot" style="background:#1e9e5b"></span><b>学生</b>自评 + 互评</div>
+          <div class="mchip"><span class="dot" style="background:#ff9f00"></span><b>企业导师</b>岗位视角</div>
+          <div class="mchip"><span class="dot" style="background:#0046c9"></span><b>考评系统</b>AI 客观数据</div>
         </div>
       </div>
       <div class="mcol">
@@ -278,7 +276,7 @@ footer b{color:var(--orange2)}
 
   <div class="legend">
     <div class="li"><div class="tp">结果评价 R<span class="pct" style="background:#1e4280">50%</span></div><p>终结任务考核：实操达标度（教师·企业）+ 理论测试（软件·云课堂）。<b>对应知识+技能</b></p></div>
-    <div class="li"><div class="tp">过程评价 P<span class="pct" style="background:#002060">40%</span></div><p>课中四维：技能精准度·流程完整度·团队配合·职业素养，五元主体加权。<b>对应技能+素养</b></p></div>
+    <div class="li"><div class="tp">过程评价 P<span class="pct" style="background:#002060">40%</span></div><p>课中四维：技能精准度·流程完整度·团队配合·职业素养，四元主体加权。<b>对应技能+素养</b></p></div>
     <div class="li"><div class="tp">增值评价 V<span class="pct" style="background:#ff9f00">10%</span></div><p>前测→后测的净增值（相对期望增值的残差）。<b>对应素养·成长</b></p></div>
   </div>
 
@@ -286,9 +284,9 @@ footer b{color:var(--orange2)}
     <div class="card">
       <div class="blockttl" style="margin-top:0">过程评价 P · 四维权重</div>
       <div class="wbars">
-        <div class="wbar"><div class="wtop"><span><span style="color:#0046c9">●</span> 技能精准度 <span class="wtag">软件 AI</span></span><span class="wp">30%</span></div><div class="wtrack"><div class="wfill" style="width:30%;background:#0046c9"></div></div></div>
-        <div class="wbar"><div class="wtop"><span><span style="color:#1e4280">●</span> 流程完整度 <span class="wtag">软件 AI</span></span><span class="wp">30%</span></div><div class="wtrack"><div class="wfill" style="width:30%;background:#1e4280"></div></div></div>
-        <div class="wbar"><div class="wtop"><span><span style="color:#1e9e5b">●</span> 团队配合 <span class="wtag">学生互评</span></span><span class="wp">20%</span></div><div class="wtrack"><div class="wfill" style="width:20%;background:#1e9e5b"></div></div></div>
+        <div class="wbar"><div class="wtop"><span><span style="color:#0046c9">●</span> 技能精准度 <span class="wtag">考评系统</span></span><span class="wp">30%</span></div><div class="wtrack"><div class="wfill" style="width:30%;background:#0046c9"></div></div></div>
+        <div class="wbar"><div class="wtop"><span><span style="color:#1e4280">●</span> 流程完整度 <span class="wtag">考评系统</span></span><span class="wp">30%</span></div><div class="wtrack"><div class="wfill" style="width:30%;background:#1e4280"></div></div></div>
+        <div class="wbar"><div class="wtop"><span><span style="color:#1e9e5b">●</span> 团队配合 <span class="wtag">学生</span></span><span class="wp">20%</span></div><div class="wtrack"><div class="wfill" style="width:20%;background:#1e9e5b"></div></div></div>
         <div class="wbar"><div class="wtop"><span><span style="color:#ff9f00">●</span> 职业素养 <span class="wtag">教师·企业</span></span><span class="wp">20%</span></div><div class="wtrack"><div class="wfill" style="width:20%;background:#ff9f00"></div></div></div>
       </div>
       <div class="note" style="margin-top:16px">P = 0.30·技能精准度 + 0.30·流程完整度 + 0.20·团队配合 + 0.20·职业素养；每一维度由对应主体客观赋分。</div>
@@ -319,12 +317,12 @@ footer b{color:var(--orange2)}
     <div class="card">
       <div class="blockttl" style="margin-top:0">🎯 结果评价 R <span class="wtag">终结考核 · 权重50%</span></div>
       <div class="field"><div class="lab"><span><span class="src" style="background:#002060">师/企</span> 实操达标度</span><span class="val" id="v_op">88</span></div><input type="range" min="0" max="100" value="88" id="op"></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">软件</span> 理论测试</span><span class="val" id="v_th">82</span></div><input type="range" min="0" max="100" value="82" id="th"></div>
+      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">系统</span> 理论测试</span><span class="val" id="v_th">82</span></div><input type="range" min="0" max="100" value="82" id="th"></div>
 
       <div class="blockttl">📊 过程评价 P · 四维 <span class="wtag">课中五演 · 权重40%</span></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">软件</span> 技能精准度</span><span class="val" id="v_skill">88</span></div><input type="range" min="0" max="100" value="88" id="skill"></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">软件</span> 流程完整度</span><span class="val" id="v_flow">90</span></div><input type="range" min="0" max="100" value="90" id="flow"></div>
-      <div class="field"><div class="lab"><span><span class="src" style="background:#1e9e5b">互评</span> 团队配合</span><span class="val" id="v_team">85</span></div><input type="range" min="0" max="100" value="85" id="team"></div>
+      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">系统</span> 技能精准度</span><span class="val" id="v_skill">88</span></div><input type="range" min="0" max="100" value="88" id="skill"></div>
+      <div class="field"><div class="lab"><span><span class="src" style="background:#0046c9">系统</span> 流程完整度</span><span class="val" id="v_flow">90</span></div><input type="range" min="0" max="100" value="90" id="flow"></div>
+      <div class="field"><div class="lab"><span><span class="src" style="background:#1e9e5b">学生</span> 团队配合</span><span class="val" id="v_team">85</span></div><input type="range" min="0" max="100" value="85" id="team"></div>
       <div class="field"><div class="lab"><span><span class="src" style="background:#002060">师/企</span> 职业素养</span><span class="val" id="v_prof">86</span></div><input type="range" min="0" max="100" value="86" id="prof"></div>
 
       <div class="blockttl">📈 增值评价 V · 前测/后测 <span class="wtag">全程 · 权重10%</span></div>
@@ -496,8 +494,8 @@ window.addEventListener("load",()=>{
   Chart.defaults.maintainAspectRatio=false;
 
   new Chart(document.getElementById("subjChart"),{type:"doughnut",
-    data:{labels:["教师评 50%","企业评 20%","学生自评 10%","学生互评 10%","软件评 10%"],
-      datasets:[{data:[50,20,10,10,10],backgroundColor:["#002060","#ff9f00","#e08a00","#1e9e5b","#0046c9"],borderWidth:2,borderColor:"#fff"}]},
+    data:{labels:["教师 50%","学生 20%","企业导师 20%","考评系统 10%"],
+      datasets:[{data:[50,20,20,10],backgroundColor:["#002060","#1e9e5b","#ff9f00","#0046c9"],borderWidth:2,borderColor:"#fff"}]},
     options:{plugins:{legend:{position:"bottom",labels:{font:{size:12.5},padding:12,boxWidth:14,usePointStyle:true,pointStyle:"circle"}}},cutout:"58%"}});
 
   radarChart=new Chart(document.getElementById("radar"),{type:"radar",
